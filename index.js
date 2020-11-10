@@ -41,7 +41,7 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
      
 
 */
-
+let qtyOfInnings = 9
 // counter1 code
 function counterMaker() {
   let count = 1;
@@ -91,15 +91,24 @@ For example: invoking finalScore(inning, 9) might return this object:
 }
 */ 
 
+function getInningScore() {
+  return{
+    Home: inning(),
+    Away: inning()
+  }
+}
+console.log(getInningScore())
+
+
+const scores = []
 
 function finalScore(){
-  // for (i=1; i<10; i++){
-    return{
-      Home: inning(),
-      Away: inning()
-    }
-// }
-
+  for (i=1; i<=qtyOfInnings; i++){
+    scores.push(
+      getInningScore
+    )
+}
+  return scores
 }
 console.log(finalScore())
 
@@ -108,13 +117,8 @@ console.log(finalScore())
 // the function should take the inning function as an argument 
 // it should return an object with with a score for home and a score for away that that populates from invoking the inning callback. */
 
-function getInningScore(/*Your Code Here */) {
-  return{
-    Home: inning(),
-    Away: inning()
-  }
-}
-console.log(getInningScore())
+
+
 /* Task 5: scoreboard()
 Use the scoreboard function below to do the following:
   1. Receive a callback function, that you create, called `getInningScore`
@@ -158,12 +162,15 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
+const scoreBoardArray = []
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(arr,qtyOfInnings,oldarr) {
+
+return scores
+  
 }
 
-
+console.log(scoreboard(scoreBoardArray, qtyOfInnings, scores))
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
@@ -171,13 +178,13 @@ function foo(){
   console.log('its working');
   return 'bar';
 }
-export default{
-  foo,
-  processFirstItem,
-  counter1,
-  counter2,
-  inning,
-  finalScore,
-  getInningScore,
-  scoreboard,
-}
+// export default{
+//   foo,
+//   processFirstItem,
+//   counter1,
+//   counter2,
+//   inning,
+//   finalScore,
+//   getInningScore,
+//   scoreboard,
+// }

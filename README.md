@@ -9,6 +9,7 @@ The module challenge is the afternoon project or assignment that students work t
 ## Objectives
 
 - Explain function scope
+  declared variables and functions wouldn't be accessible outside of their functions. Only the final return statement that closes out the argument
 - Describe what closure is, how closure is created in a program and why it is important to understand closures in JavaScript  
 
 ## Introduction
@@ -64,12 +65,19 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+  closure is used on the function personDice and you can tell by the presence of {} and nested {}
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+  Dan's roll will always roll a number between 0 and 6. The number options won't change, but the final output of his roll in a message would appear.
+  
 c. What is the lexical scope of `newRoll`? 
+
+  newRoll is defined under the function scope of the argument (child) and won't be available outside the function. 
 
 ### Task 2c - Exit Ticket
 
-Once you begin, you will have 15 minutes to answer the questions [here](https://app.codesignal.com/public-test/WjSzNh9gDrD8Xn8hw/enY3yPRP3nEm7E).
+Once you begin, you will have 15 minutes to answer the questions [complete](https://app.codesignal.com/public-test/WjSzNh9gDrD8Xn8hw/enY3yPRP3nEm7E).
 
 The completion of these questions is mandatory for MVP. However, passing the quiz doesn't affect your standing as a Lambda School student whatsoever. This is Lambda School testing itself! Please answer honestly and to the best of your ability without using external references.
 
