@@ -16,7 +16,7 @@
 function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
-console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
+// console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
 
 // ⭐️ Example Challenge END ⭐️
 
@@ -41,7 +41,7 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
      
 
 */
-let qtyOfInnings = 9
+
 // counter1 code
 function counterMaker() {
   let count = 1;
@@ -52,15 +52,15 @@ function counterMaker() {
 }
 
 const counter1 = counterMaker();
-console.log(counter1())
+// console.log(counter1())
 
 // counter2 code
-let count = 1;
+let count = 1
 
 function counter2() {
   return count=count++;
 }
-console.log(counter2())
+// console.log(counter2())
 
 
 // How do you get this to actually increment?
@@ -74,10 +74,9 @@ Use the inning function below to do the following:
 */
 function inning(){
 
-  return Math.floor(Math.random()*3)
+  return Math.floor(Math.random()*3);
 }
-
-console.log(inning())
+// console.log(inning())
 /* Task 3: finalScore()
 Use the finalScore function below to do the following:
   1. Receive the callback function `inning` that was created in Task 2 
@@ -91,26 +90,36 @@ For example: invoking finalScore(inning, 9) might return this object:
 }
 */ 
 
-function getInningScore() {
+
+function getInningScore(inningScore) {
   return{
-    Home: inning(),
-    Away: inning()
+    Home: inningScore(),
+    Away: inningScore()
   }
 }
-console.log(getInningScore())
+
+// getInningScore(inning)
+// console.log(getInningScore())
 
 
-const scores = []
 
-function finalScore(){
-  for (i=1; i<=qtyOfInnings; i++){
-    scores.push(
-      getInningScore
-    )
+function finalScore(inningScore, qtyOfInnings){
+  let homeScore = 0;
+  let awayScore = 0;
+  
+  const scores = {
+    Home: homeScore,
+    Away: awayScore,
+  }
+  for (let i=0; i<qtyOfInnings; i++){
+      homeScore += inningScore();
+      awayScore += inningScore()
 }
   return scores
 }
-console.log(finalScore())
+
+console.log(finalScore(inning, 9))
+// console.log(getInningScore)
 
 
 // create a function called getInningScore 
@@ -147,44 +156,39 @@ Use the scoreboard function below to do the following:
   "Final Score: Away 13 - Home 11"  
 ]  
   If there is a tie, invoking scoreboard(getInningScore,inning, 9) might return 
-  an array of strings like this:
-[
-  "Inning 1: Away 1 - Home 2", 
-  "Inning 2: Away 2 - Home 3",
-  "Inning 3: Away 4 - Home 4", 
-  "Inning 4: Away 5 - Home 5", 
-  "Inning 5: Away 7 - Home 7", 
-  "Inning 6: Away 9 - Home 8", 
-  "Inning 7: Away 10 - Home 8", 
-  "Inning 8: Away 12 - Home 10",
-  "Inning 9: Away 12 - Home 12", 
-  "This game will require extra innings: Away 12 - Home 12"
-]  
-  */
+//   an array of strings like this:
+// [
+//   "Inning 1: Away 1 - Home 2", 
+//   "Inning 2: Away 2 - Home 3",
+//   "Inning 3: Away 4 - Home 4", 
+//   "Inning 4: Away 5 - Home 5", 
+//   "Inning 5: Away 7 - Home 7", 
+//   "Inning 6: Away 9 - Home 8", 
+//   "Inning 7: Away 10 - Home 8", 
+//   "Inning 8: Away 12 - Home 10",
+//   "Inning 9: Away 12 - Home 12", 
+//   "This game will require extra innings: Away 12 - Home 12"
+// ]  
+//   */
 
-const scoreBoardArray = []
-
-function scoreboard(arr,qtyOfInnings,oldarr) {
-
-return scores
+function scoreboard(){
   
 }
 
-console.log(scoreboard(scoreBoardArray, qtyOfInnings, scores))
 
-
-/* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
+// console.log(scoreboard(9, scores))
+// /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
 function foo(){
   console.log('its working');
   return 'bar';
 }
-// export default{
-//   foo,
-//   processFirstItem,
-//   counter1,
-//   counter2,
-//   inning,
-//   finalScore,
-//   getInningScore,
-//   scoreboard,
-// }
+export default{
+  foo,
+  processFirstItem,
+  counter1,
+  counter2,
+  inning,
+  finalScore,
+  getInningScore,
+  scoreboard,
+}
