@@ -28,11 +28,18 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+      Counter 2 will not increment the count because the count variable is outside the function. It will leave the starting value unchanged. 
   
   2. Which of the two uses a closure? How can you tell?
+       the first one because there are nested funcitions and declarations
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+     counter2 be better?
+     1 when you want the value to increment
+     2 when you don't want the actual starting variable's value to change, but you do want to show the result of the function itself. The count will remain unchanged beyond the return statemetn
+
+     
+
 */
 
 // counter1 code
