@@ -109,8 +109,12 @@ console.log(finalScore())
 // it should return an object with with a score for home and a score for away that that populates from invoking the inning callback. */
 
 function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+  return{
+    Home: inning(),
+    Away: inning()
+  }
 }
+console.log(getInningScore())
 /* Task 5: scoreboard()
 Use the scoreboard function below to do the following:
   1. Receive a callback function, that you create, called `getInningScore`
