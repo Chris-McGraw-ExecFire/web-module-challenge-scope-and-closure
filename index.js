@@ -44,36 +44,40 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
 
 // counter1 code
 function counterMaker() {
-  let count = 0;
+  let count = 1;
   return function counter() {
-   return count++;
+    
+   return count=count++;
   }
 }
 
 const counter1 = counterMaker();
+console.log(counter1())
 
 // counter2 code
-let count = 0;
+let count = 1;
 
 function counter2() {
-  return count++;
+  return count=count++;
 }
+console.log(counter2())
 
+
+// How do you get this to actually increment?
 
 /* Task 2: inning() 
 Use the inning function below to do the following:
-  1. Return a random whole number of points between 0 and 2 scored by one team in an inning
+  1. Return a random whole number of poitns between 0 and 2 scored by one team in an inning
   
   NOTE: You will be using this function over and over again in the tasks below
   For example: invoking inning() should return a numerical score value of 0, 1, or 2
 */
+function inning(){
 
-function inning(/*Code Here*/){
-
-    /*Code Here*/
-
+  return Math.floor(Math.random()*3)
 }
 
+console.log(inning())
 /* Task 3: finalScore()
 Use the finalScore function below to do the following:
   1. Receive the callback function `inning` that was created in Task 2 
@@ -87,13 +91,19 @@ For example: invoking finalScore(inning, 9) might return this object:
 }
 */ 
 
-function finalScore(/*code Here*/){
 
-  /*Code Here*/
+function finalScore(){
+  // for (i=1; i<10; i++){
+    return{
+      Home: inning(),
+      Away: inning()
+    }
+// }
 
 }
+console.log(finalScore())
 
-/* Task 4: 
+
 // create a function called getInningScore 
 // the function should take the inning function as an argument 
 // it should return an object with with a score for home and a score for away that that populates from invoking the inning callback. */
